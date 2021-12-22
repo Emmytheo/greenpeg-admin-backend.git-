@@ -48,5 +48,5 @@
       }
     }
   },
-  "mongodb": "mongodb://localhost:27017/grnpg_admin_backend"
+  "mongodb": "DB_LINK"
 }
