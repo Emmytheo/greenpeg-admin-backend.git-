@@ -63,13 +63,11 @@ app.configure(swagger({
     // schemes: ['http', 'https'] // Optionally set the protocol schema used (sometimes required when host on https)
   },
   idType: 'string',
-  ignore: {
-    tags: [
-      'users',
-      'requests'
-    ],
+  // ignore: {
+  //   tags: [
+  //   ],
     
-  }
+  // }
   
 
 }));
