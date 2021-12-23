@@ -53,13 +53,14 @@ app.configure(swagger({
       in: 'header'
     }
  },
+  schemes: ['http', 'https'],
   specs: {
     info: {
       title: 'Greenpeg API Docs',
       description: 'A swagger based test bed for exploring the Greenpeg API',
       version: '1.0.0',
     },
-    schemes: ['http', 'https'] // Optionally set the protocol schema used (sometimes required when host on https)
+    // schemes: ['http', 'https'] // Optionally set the protocol schema used (sometimes required when host on https)
   },
   idType: 'string',
   ignore: {
