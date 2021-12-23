@@ -49,6 +49,7 @@
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "feathers-mongodb": "^6.4.1",
+    "feathers-swagger": "github:ivanmarjanovic/feathers-swagger",
     "helmet": "^4.6.0",
     "mongodb": "^3.7.2",
     "mongodb-core": "^3.2.7",

@@ -48,5 +48,5 @@
       }
     }
   },
-  "mongodb": "DB_LINK"
+  "mongodb": "mongodb://localhost:27017/greenpeg"
 }

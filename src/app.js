@@ -9,6 +9,7 @@ const feathers = require('@feathersjs/feathers')
 const configuration = require('@feathersjs/configuration')
 const express = require('@feathersjs/express')
 const socketio = require('@feathersjs/socketio')
+const swagger = require('feathers-swagger');
 
 const middleware = require('./middleware')
 const services = require('./services')
@@ -37,6 +38,40 @@ app.use('/', express.static(app.get('public')))
 
 // Set up Plugins and providers
 app.configure(express.rest())
+app.configure(swagger({
+  docsPath: '/docs',
+  uiIndex: path.join(__dirname, 'docs.html'),
+  security: [
+    {
+     APIKeyHeader: []
+    }
+  ],
+  securityDefinitions: {
+    APIKeyHeader: {
+      type: 'apiKey',
+      name: 'Authorization',
+      in: 'header'
+    }
+ },
+  specs: {
+    info: {
+      title: 'Greenpeg API Docs',
+      description: 'A swagger based test bed for exploring the Greenpeg API',
+      version: '1.0.0',
+    },
+    schemes: ['http', 'https'] // Optionally set the protocol schema used (sometimes required when host on https)
+  },
+  idType: 'string',
+  ignore: {
+    tags: [
+      'users',
+      'requests'
+    ],
+    
+  }
+  
+
+}));
 app.configure(socketio())
 
 app.configure(mongodb)
